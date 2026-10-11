@@ -1,0 +1,1275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<title>Pokémon: Gotta Catch “IT” All!</title>
+<style>
+  /* Press Start 2P (SIL Open Font License 1.1), embedded so the game works offline. */
+  @font-face {
+    font-family: "Press Start 2P";
+    font-style: normal;
+    font-weight: 400;
+    src: url(data:font/woff2;base64,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) format("woff2");
+  }
+</style>
+<style>
+  html, body {
+    margin: 0;
+    height: 100%;
+    background: #120606;
+    overflow: hidden;
+    touch-action: none;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  canvas {
+    display: block;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+    border: 6px solid #2a0e0e;
+    background: #c43c3c;
+  }
+  #cutscene {
+    display: none;
+    position: fixed;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background: #000;
+    object-fit: contain;
+    z-index: 5;
+  }
+</style>
+</head>
+<body>
+<canvas id="game" width="320" height="440"></canvas>
+<video id="cutscene" playsinline preload="auto"></video>
+
+<script>
+(() => {
+'use strict';
+
+/* =====================================================================
+   CONFIG  (everything you may want to tweak lives in this section)
+   ===================================================================== */
+const W = 320, H = 440;
+
+const FIELD = {
+  x: 8,
+  y: 88,
+  w: 304,
+  h: 300
+};      // playfield rectangle
+const BALL_R = 10;                                   // Poké Ball radius
+const PLAYER_SPEED = 240;                            // px per second
+
+// Trainer ranks: lowest score needed -> title. Easy to adjust.
+const RANKS = [
+  { min: 0,    name: 'Rookie Trainer' },
+  { min: 100,  name: 'Beginner Trainer' },
+  { min: 250,  name: 'Poké Ball Trainee' },
+  { min: 500,  name: 'Gym Challenger' },
+  { min: 750,  name: 'Gym Leader' },
+  { min: 1500, name: 'Pokémon Champion' },
+  { min: 2000, name: 'Elite Four Master' },
+  { min: 3000, name: 'IT Pokémon Master' }
+];
+
+// Collectible tiers: points and how often each tier spawns (relative weight).
+const TIERS = {
+  common:    { points: 15,  weight: 60, color: '#ffe8d8' },
+  advanced:  { points: 35,  weight: 25, color: '#6ec0e0' },
+  rare:      { points: 67,  weight: 11, color: '#f0c840' },
+  legendary: { points: 100, weight: 4,  color: '#f08030' }
+};
+
+// Collectible IT skills (labels are kept to 6 characters or fewer).
+const SKILLS = [
+  { label: 'CODE',   tier: 'common' },
+  { label: 'HTML',   tier: 'common' },
+  { label: 'CSS',    tier: 'common' },
+  { label: 'GIT',    tier: 'common' },
+  { label: 'HW',     tier: 'common' },
+  { label: 'DEBUG',  tier: 'common' },
+  { label: 'PYTHON', tier: 'advanced' },
+  { label: 'PHP',    tier: 'advanced' },
+  { label: 'JS',     tier: 'advanced' },
+  { label: 'SQL',    tier: 'advanced' },
+  { label: 'LINUX',  tier: 'advanced' },
+  { label: 'UI/UX',  tier: 'advanced' },
+  { label: 'TCP/IP', tier: 'rare' },
+  { label: 'DSA',    tier: 'rare' },
+  { label: 'CLOUD',  tier: 'rare' },
+  { label: 'SYSAD',  tier: 'rare' },
+  { label: 'DEV',    tier: 'rare' },
+  { label: 'CYBER',  tier: 'legendary' },
+  { label: 'AI',     tier: 'legendary' }
+];
+const SKILL_W = 56, SKILL_H = 20;
+
+// Difficulty curves (all depend only on the current score).
+const fallSpeed     = s => Math.min(340, 120 + s * 0.1);        // px per second
+const spawnInterval = s => Math.max(0.40, 1.1 - s * 0.0004);    // seconds
+const hazardChance  = s => Math.min(0.55, 0.28 + s * 0.00018);  // 0..1
+const PAIR_FROM_SCORE = 250;    // two hazards with a safe gap between them
+const TRAP_FROM_SCORE = 300;    // a skill with a hazard trailing right behind it
+
+// Rage events: surprise twists from RAGE_FROM_SCORE onward. Hard, but always dodgeable.
+const RAGE_FROM_SCORE = 1500;
+const RAGE_DODGE_REWARD = 300;
+const RAGE_FIRST_DELAY = 1;          // seconds after reaching RAGE_FROM_SCORE before the first event (0 = immediately)
+const RAGE_INTERVAL = [5, 7
+  
+];        // seconds between later events (random in this range)
+const RAGE_REACT = 0.45;               // reaction time (s) the fairness check grants the player
+const LUNGE_SHAKE = 0.1;              // visible dodge window before the lunge
+const LUNGE_WARNING_DISTANCE = 120;   // start the tell this far above the Poké Ball
+const LUNGE_SPEED = 300;              // px per second once it lunges
+const LUNGE_TRACK = 300;              // max sideways chase speed (px/s) while lunging
+const LUNGE_LOCK_GAP = 20;            // stops chasing sideways when this close above the ball
+const RISE_PX = 110;                  // how far the Poké Ball jumps upward
+const RISE_UP = 0.1, RISE_HOLD = 1, RISE_DOWN = 0.1;   // seconds
+const RISE_MAX_WAIT = 1.5;            // max extra seconds it waits for hazards to clear before dropping
+const CUTSCENE_SRC = 'UNEVERSEEITCOMING.mp4';   // your video: keep it next to index.html
+const CUTSCENE_START_TIMEOUT = 3;     // seconds to wait for playback to start; otherwise go straight to Game Over
+
+/* =====================================================================a
+   COLORS + SPRITES
+   ===================================================================== */
+const C = {
+  dark: '#2a0808', mid: '#7a1a1a', field: '#a82828',        // field = tile flecks
+  bg: '#c43c3c', light: '#ffe8d8', red: '#c81818',
+  hover: '#f0a090', gold: '#ffd84a', ball: '#ff3b2f',
+  pitch: '#4a0e0e', pitchFleck: '#5e1616'                   // playfield tiles
+};
+const PAL = {
+  '#': '#2a0808', 'g': '#ff9a70', 'G': '#a02828', 'w': '#ffe8d8',
+  'r': '#ff4a3a', 'y': '#f0c840', 'b': '#3060c0', 'p': '#f0b0b0',
+  'c': '#d65a5a'
+};
+
+function sprite(rows, scale) {
+  const h = rows.length, w = rows[0].length;
+  const c = document.createElement('canvas');
+  c.width = w * scale; c.height = h * scale;
+  const g = c.getContext('2d');
+  for (let j = 0; j < h; j++) {
+    for (let i = 0; i < w; i++) {
+      const ch = rows[j][i];
+      if (ch !== '.') { g.fillStyle = PAL[ch]; g.fillRect(i * scale, j * scale, scale, scale); }
+    }
+  }
+  return c;
+}
+
+// Pixel-art Poké Ball generated on an n x n grid.
+
+function ballSprite(n, scale, style = BALL_STYLES[0]) {
+  const c = document.createElement('canvas');
+  c.width = n * scale;
+  c.height = n * scale;
+
+  const g = c.getContext('2d');
+  const R = n / 2;
+  const band = Math.max(1, Math.round(n / 8));
+
+  for (let j = 0; j < n; j++) {
+    for (let i = 0; i < n; i++) {
+      const dx = i + 0.5 - R;
+      const dy = j + 0.5 - R;
+      const d = Math.sqrt(dx * dx + dy * dy);
+
+      if (d > R) continue;
+
+      let col;
+
+      if (d > R - 1) {
+        col = C.dark;
+      } else if (d < n * 0.2) {
+        col = d < n * 0.1 ? C.light : C.dark;
+      } else if (Math.abs(dy) < band / 2 + 0.01) {
+        col = C.dark;
+      } else {
+        col = dy < 0 ? style.top : style.bottom;
+
+        // Decorative pixels on the upper shell.
+        if (
+          dy < -band / 2 &&
+          j >= 2 &&
+          j <= 3 &&
+          (i === 2 || i === 3 || i === n - 3 || i === n - 4)
+        ) {
+          col = style.accent;
+        }
+      }
+
+      g.fillStyle = col;
+      g.fillRect(i * scale, j * scale, scale, scale);
+    }
+  }
+
+  return c;
+}
+
+// Hazards: 12x12 pixel art, drawn at 2x (24x24 on screen).
+const HAZARDS = [
+  { key: 'bug', phrase: 'a critical bug', rows: [
+    '..#......#..',
+    '...#....#...',
+    '....####....',
+    '...#rrrr#...',
+    '..#rwrrwr#..',
+    '###rrrrrr###',
+    '..#rrrrrr#..',
+    '###rrrrrr###',
+    '..#rrrrrr#..',
+    '###.#rr#.###',
+    '...#....#...',
+    '..#......#..' ] },
+  { key: 'virus', phrase: 'a computer virus', rows: [
+    '.....##.....',
+    '.#...rr...#.',
+    '..#.rrrr.#..',
+    '...rrrrrr...',
+    '#.rrwrrwrr.#',
+    '##rrrrrrrr##',
+    '.#rrrrrrrr#.',
+    '#.rrwwwwrr.#',
+    '...rrrrrr...',
+    '..#.rrrr.#..',
+    '.#...rr...#.',
+    '.....##.....' ] },
+  { key: 'malware', phrase: 'malware', rows: [
+    '...######...',
+    '..#wwwwww#..',
+    '.#wwwwwwww#.',
+    '.#wrrwwrrw#.',
+    '.#wrrwwrrw#.',
+    '.#wwwwwwww#.',
+    '..#wwrrww#..',
+    '..#wwwwww#..',
+    '...#w##w#...',
+    '...#wwww#...',
+    '....####....',
+    '............' ] },
+  { key: 'trojan', phrase: 'a Trojan horse', rows: [
+    '...##.......',
+    '..#rr#......',
+    '.#rrrr#.....',
+    '.#rwrrr#....',
+    '.#rrrrrr#...',
+    '..#rrrrrr#..',
+    '...#rrrrr##.',
+    '....#rrrrr#.',
+    '....#rrrrr#.',
+    '...#rrrrrr#.',
+    '..##########',
+    '............' ] },
+  { key: 'ransom', phrase: 'ransomware', rows: [
+    '....####....',
+    '...#....#...',
+    '...#....#...',
+    '...#....#...',
+    '.##########.',
+    '.#rrrrrrrr#.',
+    '.#rrr##rrr#.',
+    '.#rrr##rrr#.',
+    '.#rrrrrrrr#.',
+    '.#rrrrrrrr#.',
+    '.##########.',
+    '............' ] },
+  { key: 'bsod', phrase: 'a Blue Screen of Death', rows: [
+    '############',
+    '#bbbbbbbbbb#',
+    '#bbwbbwbbbb#',
+    '#bbwbbwbbbb#',
+    '#bbbbbbbbbb#',
+    '#bbbwwwwbbb#',
+    '#bbwbbbbwbb#',
+    '#bbbbbbbbbb#',
+    '#bwwwwwwwwb#',
+    '#bbbbbbbbbb#',
+    '############',
+    '............' ] },
+  { key: 'error', phrase: 'a critical system error', rows: [
+    '############',
+    '#rrrrrrrrrr#',
+    '#rwrrrrrrwr#',
+    '#rrwrrrrwrr#',
+    '#rrrwrrwrrr#',
+    '#rrrrwwrrrr#',
+    '#rrrrwwrrrr#',
+    '#rrrwrrwrrr#',
+    '#rrwrrrrwrr#',
+    '#rwrrrrrrwr#',
+    '#rrrrrrrrrr#',
+    '############' ] },
+  { key: 'glitch', phrase: 'corrupted data', rows: [
+    'rr..##..bb..',
+    'rr..##..bb..',
+    '..yy..rr....',
+    '..yy..rr..##',
+    '##..bb..yy##',
+    '##..bb..yy..',
+    '..rr..##....',
+    '..rr..##..bb',
+    'bb..yy....bb',
+    'bb..yy..rr..',
+    '..##....rr..',
+    '..##..bb....' ] },
+  { key: 'exe', phrase: 'a suspicious executable', rows: [
+    '.#######....',
+    '.#ppppp##...',
+    '.#ppppp#p#..',
+    '.#ppppp####.',
+    '.#pppppppp#.',
+    '.#ppprrppp#.',
+    '.#ppprrppp#.',
+    '.#ppprrppp#.',
+    '.#pppppppp#.',
+    '.#ppprrppp#.',
+    '.#pppppppp#.',
+    '.##########.' ] }
+];
+HAZARDS.forEach(h => { h.img = sprite(h.rows, 2); });
+const HAZ = 24;   // on-screen hazard size
+
+// Rank emblem glyphs: 8x8 pixel art, drawn at 3x inside a 32x32 plate.
+const GLYPHS = [
+  // 0 trainer cap
+  ['........', '..####..', '.#rrrr#.', '#rrrrrr#', '#rrrrrr#', '########', '.#wwww#.', '........'],
+  // 1 sprout
+  ['........', '.GG..GG.', 'GGGGGGGG', '.GGGGGG.', '...GG...', '...GG...', '...GG...', '..GGGG..'],
+  // 2 Poké Ball
+  ['..####..', '.#rrrr#.', '#rrrrrr#', '###ww###', '#wwwwww#', '#wwwwww#', '.#wwww#.', '..####..'],
+  // 3 gym badge
+  ['...##...', '..#bb#..', '.#bwbb#.', '#bbbbbb#', '#bbbbbb#', '.#bbbb#.', '..#bb#..', '...##...'],
+  // 4 star
+  ['...yy...', '...yy...', 'yyyyyyyy', '.yyyyyy.', '..yyyy..', '..yyyy..', '.yy..yy.', '.y....y.'],
+  // 5 trophy
+  ['#yyyyyy#', '#yyyyyy#', '.#yyyy#.', '..#yy#..', '...yy...', '...yy...', '..yyyy..', '.######.'],
+  // 6 shield with four pips
+  ['########', '#rrwwrr#', '#rrwwrr#', '#wwwwww#', '#rrwwrr#', '#rrwwrr#', '.######.', '..####..'],
+  // 7 crown
+  ['y..yy..y', 'yy.yy.yy', 'yyyyyyyy', 'yyyyyyyy', 'yybbbbyy', 'yyyyyyyy', '########', '........']
+];
+const FRAME_COLORS = ['#a06838', '#a06838', '#c0c0c0', '#c0c0c0', '#f0c840', '#f0c840', '#d03030', '#f0c840'];
+const glyphImgs = GLYPHS.map(g => sprite(g, 3));
+
+// Title-screen computer.
+const COMPUTER = sprite([
+  '.##############.',
+  '#wwwwwwwwwwwwww#',
+  '#w############w#',
+  '#w#gggggggggg#w#',
+  '#w#g#gggggggg#w#',
+  '#w#gg#ggggggg#w#',
+  '#w#g#gg####gg#w#',
+  '#w#gggggggggg#w#',
+  '#w############w#',
+  '#wwwwwwwwwwwwww#',
+  '.######..######.',
+  '.....#....#.....',
+  '...##########...',
+  '................'
+], 3);
+
+const BALL_STYLES = [
+  { top: C.ball, bottom: C.light, accent: C.dark },       // Poké Ball
+  { top: '#2878e8', bottom: C.light, accent: '#e84040' }, // Great Ball
+  { top: '#303040', bottom: C.light, accent: '#f0c840' }, // Ultra Ball
+  { top: '#a040d0', bottom: '#e878c0', accent: '#7030a0' }, // Master Ball
+  { top: '#40c8a0', bottom: '#e8f8e8', accent: '#188868' },
+  { top: '#f0a040', bottom: '#fff0c0', accent: '#c06020' },
+  { top: '#60b8e8', bottom: '#e8f8ff', accent: '#3078b0' },
+  { top: '#d8d8e8', bottom: '#ffffff', accent: '#7860c0' }
+];
+
+const playerBalls = BALL_STYLES.map(style =>
+  ballSprite(10, 2, style)
+);
+
+const titleBall = ballSprite(16, 4, BALL_STYLES[0]);
+const miniBall = ballSprite(8, 2, BALL_STYLES[0]);
+
+let playerBall = playerBalls[0];
+// Animated-backdrop art (title + menu screens). The creatures are original designs.
+const CRITTERS = {
+  flyer: [
+    sprite([
+      '##........##',
+      '#w#..##..#w#',
+      '#ww#.rr.#ww#',
+      '.#w#rrrr#w#.',
+      '..##rwwr##..',
+      '...#rrrr#...',
+      '...#r##r#...',
+      '....#..#....'
+    ], 2),
+    sprite([
+      '............',
+      '....#..#....',
+      '...#rrrr#...',
+      '.##rrwwrr##.',
+      '#ww#rrrr#ww#',
+      '#w#.#rr#.#w#',
+      '##..#rr#..##',
+      '....####....'
+    ], 2)
+  ],
+  hopper: [
+    sprite([
+      '.#........#.',
+      '#r#......#r#',
+      '#rr#....#rr#',
+      '.#rr####rr#.',
+      '.#rrrrrrrr#.',
+      '#rr#rrrr#rr#',
+      '#rrrrrrrrrr#',
+      '#rrrr##rrrr#',
+      '.#rrrrrrrr#.',
+      '..########..'
+    ], 2),
+    sprite([
+      '.#........#.',
+      '#r#......#r#',
+      '#rr#....#rr#',
+      '.#rr####rr#.',
+      '.#rrrrrrrr#.',
+      '#rr#rrrr#rr#',
+      '#rrrrrrrrrr#',
+      '.#rrr##rrr#.',
+      '..#r#..#r#..',
+      '..##....##..'
+    ], 2)
+  ],
+  jelly: [
+    sprite([
+      '...######...',
+      '..#pppppp#..',
+      '.#pppppppp#.',
+      '.#p#pppp#p#.',
+      '.#pppppppp#.',
+      '..########..',
+      '..#.#..#.#..',
+      '...#.##.#...'
+    ], 2),
+    sprite([
+      '...######...',
+      '..#pppppp#..',
+      '.#pppppppp#.',
+      '.#p#pppp#p#.',
+      '.#pppppppp#.',
+      '..########..',
+      '...#.##.#...',
+      '..#.#..#.#..'
+    ], 2)
+  ]
+};
+const CLOUD = sprite([
+  '....cccc....',
+  '..cccccccc..',
+  '.cccccccccc.',
+  'cccccccccccc'
+], 3);
+
+/* =====================================================================
+   STORAGE (localStorage with in-memory fallback)
+   ===================================================================== */
+const store = {
+  mem: {},
+  get(k) {
+    try { const v = localStorage.getItem(k); if (v !== null) return v; } catch (e) {}
+    return this.mem[k] !== undefined ? this.mem[k] : null;
+  },
+  set(k, v) {
+    this.mem[k] = v;
+    try { localStorage.setItem(k, v); } catch (e) {}
+  }
+};
+const KEY_BEST = 'pgcia.best', KEY_TOP5 = 'pgcia.top5';
+
+function loadBest() { const n = parseInt(store.get(KEY_BEST), 10); return isFinite(n) && n > 0 ? n : 0; }
+function loadTop5() {
+  try {
+    const a = JSON.parse(store.get(KEY_TOP5) || '[]');
+    if (Array.isArray(a)) return a.filter(n => typeof n === 'number' && n > 0).sort((x, y) => y - x).slice(0, 5);
+  } catch (e) {}
+  return [];
+}
+
+/* =====================================================================
+   HELPERS
+   ===================================================================== */
+const canvas = document.getElementById('game');
+const ctx = canvas.getContext('2d');
+let scale = 1;
+
+const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+const rand = (a, b) => a + Math.random() * (b - a);
+const pad6 = n => String(n).padStart(6, '0');
+const rankIndex = s => { let r = 0; for (let i = 0; i < RANKS.length; i++) if (s >= RANKS[i].min) r = i; return r; };
+
+function txt(s, x, y, o) {
+  o = o || {};
+  ctx.font = (o.size || 8) + 'px "Press Start 2P", monospace';
+  ctx.textAlign = o.align || 'left';
+  ctx.textBaseline = 'top';
+  if (o.shadow) { ctx.fillStyle = C.dark; ctx.fillText(s, x + o.shadow, y + o.shadow); }
+  ctx.fillStyle = o.color || C.dark;
+  ctx.fillText(s, x, y);
+}
+function wrap(s, maxW, size) {
+  ctx.font = (size || 8) + 'px "Press Start 2P", monospace';
+  const words = s.split(' '), lines = [];
+  let cur = '';
+  for (const w of words) {
+    const t = cur ? cur + ' ' + w : w;
+    if (ctx.measureText(t).width > maxW && cur) { lines.push(cur); cur = w; } else cur = t;
+  }
+  if (cur) lines.push(cur);
+  return lines;
+}
+// Retro dialogue box: thick dark border with notched corners.
+function box(x, y, w, h, fill) {
+  ctx.fillStyle = C.dark;
+  ctx.fillRect(x + 2, y, w - 4, h);
+  ctx.fillRect(x, y + 2, w, h - 4);
+  ctx.fillRect(x + 1, y + 1, w - 2, h - 2);
+  ctx.fillStyle = fill || C.light;
+  ctx.fillRect(x + 3, y + 2, w - 6, h - 4);
+  ctx.fillRect(x + 2, y + 3, w - 4, h - 6);
+}
+function circleRect(cx, cy, r, rx, ry, rw, rh) {
+  const nx = clamp(cx, rx, rx + rw), ny = clamp(cy, ry, ry + rh);
+  const dx = cx - nx, dy = cy - ny;
+  return dx * dx + dy * dy < r * r;
+}
+
+// Tiled background, drawn once.
+function makeTiles(base, fleck) {
+  const c = document.createElement('canvas');
+  c.width = W; c.height = H;
+  const g = c.getContext('2d');
+  g.fillStyle = base; g.fillRect(0, 0, W, H);
+  g.fillStyle = fleck;
+  for (let ty = 0; ty < H; ty += 16) {
+    for (let tx = 0; tx < W; tx += 16) {
+      const o = ((tx + ty) / 16) % 2 ? 4 : 0;
+      g.fillRect(tx + 3 + o, ty + 4, 2, 2);
+      g.fillRect(tx + 11 - o, ty + 10, 2, 2);
+      g.fillRect(tx + 7, ty + 14, 1, 1);
+    }
+  }
+  return c;
+}
+const bgCache = makeTiles(C.bg, C.field);           // menus, HUD, title
+const fieldCache = makeTiles(C.pitch, C.pitchFleck); // playfield (darker so sprites stand out)
+
+/* =====================================================================
+   GAME STATE
+   ===================================================================== */
+let state = 'title';                 // 'title' | 'howto' | 'playing' | 'cutscene' | 'gameover'
+let T = 0;                           // animation clock (seconds)
+let best = loadBest();
+let top5 = loadTop5();
+
+const keys = { left: false, right: false };
+const BALL_Y0 = FIELD.y + FIELD.h - 18;                    // resting row of the Poké Ball
+const ball = { x: FIELD.x + FIELD.w / 2, y: BALL_Y0, flash: 0, rise: null };
+let rage = { next: null, pending: null, waited: 0 };       // rage-event scheduler
+let rewardedLunges = new WeakSet();
+const cut = { t: 0, started: false };                      // cutscene state
+const vid = document.getElementById('cutscene');
+
+let score = 0, rankIdx = 0, ents = [], popups = [], banner = null, spawnTimer = 0;
+let over = null;                     // data for the Game Over screen
+
+let buttons = [];                    // rebuilt every frame by btn()
+let mouse = { x: -1, y: -1 };
+
+/* ---------- spawning ---------- */
+const randX = half => rand(FIELD.x + half, FIELD.x + FIELD.w - half);
+
+function makeSkill(x, y) {
+  let total = 0;
+  for (const k in TIERS) total += TIERS[k].weight;
+  let r = Math.random() * total, tier = 'common';
+  for (const k in TIERS) { r -= TIERS[k].weight; if (r <= 0) { tier = k; break; } }
+  const pool = SKILLS.filter(s => s.tier === tier);
+  const s = pool[Math.floor(Math.random() * pool.length)];
+  return { kind: 'skill', x, y, label: s.label, tier };
+}
+function makeHazard(x, y) {
+  const h = HAZARDS[Math.floor(Math.random() * HAZARDS.length)];
+  return { kind: 'hazard', x: clamp(x, FIELD.x + HAZ / 2, FIELD.x + FIELD.w - HAZ / 2), y, def: h };
+}
+
+function buildGroup() {
+  const r = Math.random();
+  const hy = FIELD.y - HAZ, sy = FIELD.y - SKILL_H;
+  if (score >= TRAP_FROM_SCORE && r < 0.12) {
+    const x = randX(SKILL_W / 2);
+    return [makeSkill(x, sy), makeHazard(x + rand(-14, 14), hy - 40)];
+  }
+  if (score >= PAIR_FROM_SCORE && r < 0.30) {
+    const gapHalf = rand(34, 42);
+    const c = rand(FIELD.x + gapHalf + HAZ / 2, FIELD.x + FIELD.w - gapHalf - HAZ / 2);
+    return [makeHazard(c - gapHalf, hy), makeHazard(c + gapHalf, hy), makeSkill(c, sy - 50)];
+  }
+  if (Math.random() < hazardChance(score)) {
+    const x = Math.random() < 0.45 ? ball.x + rand(-30, 30) : randX(HAZ / 2);
+    return [makeHazard(x, hy)];
+  }
+  return [makeSkill(randX(SKILL_W / 2), sy)];
+}
+
+// Fairness check: simulates the player's best possible movement and confirms
+// at least one safe path exists past every hazard (planned + already falling).
+function survivable(hz, v, rows) {
+  if (!hz.length) return true;
+  const STEP = 1 / 15, CELL = 4;
+  const minX = FIELD.x + BALL_R, maxX = FIELD.x + FIELD.w - BALL_R;
+  const n = Math.floor((maxX - minX) / CELL) + 1;
+  let cur = new Uint8Array(n), nxt = new Uint8Array(n);
+  cur[clamp(Math.round((ball.x - minX) / CELL), 0, n - 1)] = 1;
+  const reach = Math.floor(PLAYER_SPEED * 0.8 * STEP / CELL);   // deliberately conservative
+  rows = rows || [BALL_Y0];                    // ball rows to guard (two while the ball can jump up)
+  const win = [];
+  for (const h of hz) {
+    for (const row of rows) {
+      win.push({ x: h.x, t0: (row - BALL_R - (h.y + HAZ)) / v, t1: (row + BALL_R - h.y) / v });
+    }
+  }
+  const tEnd = Math.max.apply(null, win.map(w => w.t1));
+  for (let t = STEP; t <= tEnd + STEP; t += STEP) {
+    nxt.fill(0);
+    for (let i = 0; i < n; i++) {
+      if (!cur[i]) continue;
+      for (let d = -reach; d <= reach; d++) { const j = i + d; if (j >= 0 && j < n) nxt[j] = 1; }
+    }
+    for (const w of win) {
+      if (t > w.t0 && t < w.t1) {
+        const lo = Math.max(0, Math.ceil((w.x - (HAZ / 2 + BALL_R) - minX) / CELL));
+        const hi = Math.min(n - 1, Math.floor((w.x + HAZ / 2 + BALL_R - minX) / CELL));
+        for (let j = lo; j <= hi; j++) nxt[j] = 0;
+      }
+    }
+    let any = 0;
+    for (let i = 0; i < n; i++) any |= nxt[i];
+    if (!any) return false;
+    const tmp = cur; cur = nxt; nxt = tmp;
+  }
+  return true;
+}
+
+function spawnWave() {
+  const v = fallSpeed(score);
+  // while a lunging bug/malware is active, only skills spawn so the dodge stays fair
+  if (ents.some(e => e.lunger)) { ents.push(makeSkill(randX(SKILL_W / 2), FIELD.y - SKILL_H)); return; }
+  const live = ents.filter(e => e.kind === 'hazard');
+  const rows = ball.rise ? [BALL_Y0, BALL_Y0 - RISE_PX] : [BALL_Y0];
+  for (let attempt = 0; attempt < 8; attempt++) {
+    const g = buildGroup();
+    const gh = g.filter(e => e.kind === 'hazard');
+    if (!gh.length || survivable(live.concat(gh), v, rows)) { ents.push.apply(ents, g); return; }
+  }
+  ents.push(makeSkill(randX(SKILL_W / 2), FIELD.y - SKILL_H));   // fallback: no hazard this wave
+}
+
+/* ---------- state transitions ---------- */
+function startGame() {
+  score = 0; rankIdx = 0; ents = []; popups = []; banner = null; over = null;
+  ball.x = FIELD.x + FIELD.w / 2; ball.flash = 0; ball.y = BALL_Y0; ball.rise = null;
+  rage = { next: null, pending: null, waited: 0 };
+  spawnTimer = 0.8;
+  state = 'playing';
+}
+
+/* ---------- rage events (from RAGE_FROM_SCORE) ---------- */
+// One hazard may "lunge": it shakes (the tell), then dives fast and chases the ball's
+// position sideways a little. The ball may "rise": it jumps up, hovers, then drops back.
+// A third event does both at once. Every event is checked for dodgeability first.
+function stepHazard(e, lg, dt, v, bx, by) {
+  if (!lg) { e.y += v * dt; return; }
+  if (!lg.go) {
+    if (!lg.warning) {
+      e.y += v * dt;
+      if (by - (e.y + HAZ / 2) <= LUNGE_WARNING_DISTANCE) {
+        lg.warning = true;
+        lg.t = 0;
+      }
+      return;
+    }
+    lg.t += dt;
+    if (lg.t >= LUNGE_SHAKE) lg.go = true;
+    return;
+  }
+  e.y += LUNGE_SPEED * dt;
+  if (by - (e.y + HAZ / 2) > LUNGE_LOCK_GAP) {              // still chasing sideways
+    const dx = bx - e.x, step = LUNGE_TRACK * dt;
+    e.x += Math.abs(dx) <= step ? dx : Math.sign(dx) * step;
+  }
+}
+
+// Fairness check: replays the event with a player who reacts after RAGE_REACT seconds
+// and runs one way (or stays put). The event only starts if one of those survives.
+function simRage(wantRise, lunger, v, dir) {
+  const hz = ents.filter(e => e.kind === 'hazard')
+    .map(e => ({ x: e.x, y: e.y, l: e === lunger ? { t: 0, go: false } : null }));
+  if (lunger && ents.indexOf(lunger) === -1) hz.push({ x: lunger.x, y: lunger.y, l: { t: 0, go: false } });
+  const minX = FIELD.x + BALL_R, maxX = FIELD.x + FIELD.w - BALL_R, STEP = 1 / 60;
+  let bx = ball.x;
+  for (let t = STEP; t < 2.2; t += STEP) {
+    if (t >= RAGE_REACT) bx = clamp(bx + dir * PLAYER_SPEED * STEP, minX, maxX);
+    const by = wantRise ? BALL_Y0 - RISE_PX * Math.min(1, t / RISE_UP) : BALL_Y0;
+    for (const h of hz) {
+      stepHazard(h, h.l, STEP, v, bx, by);
+      if (circleRect(bx, by, BALL_R - 1, h.x - HAZ / 2 + 3, h.y + 3, HAZ - 6, HAZ - 6)) return false;
+    }
+  }
+  return true;
+}
+function startRage(type) {
+  const hasLunger = ents.some(e => e.lunger);
+  // Lunge and rise are independent events: either can start while the other is active.
+  // Only a duplicate of the same event is blocked; a combo needs both slots free.
+  if (type === 'lunge' && hasLunger) return false;
+  if (type === 'rise' && ball.rise) return false;
+  if (type === 'combo' && (hasLunger || ball.rise)) return false;
+  const wantRise = type !== 'lunge', wantLunge = type !== 'rise';
+  const v = fallSpeed(score);
+  let lunger = null, fresh = false;
+  if (wantLunge) {
+    const row = wantRise ? BALL_Y0 - RISE_PX : BALL_Y0;
+    const cands = ents.filter(e => e.kind === 'hazard' && e.y >= FIELD.y - HAZ &&
+      row - (e.y + v * LUNGE_SHAKE + HAZ / 2) >= LUNGE_LOCK_GAP + 40);
+    if (cands.length) lunger = cands[Math.floor(Math.random() * cands.length)];
+    else { lunger = makeHazard(randX(HAZ / 2), FIELD.y - HAZ); fresh = true; }
+  }
+  // Rage events are time-scheduled and must not be silently suppressed by the predictive fairness simulation.
+  if (fresh) ents.push(lunger);
+  if (lunger) lunger.lunger = { t: 0, go: false };
+  if (wantRise) ball.rise = { phase: 'up', t: 0 };
+  return true;
+}
+function updateRage(dt) {
+  if (score < RAGE_FROM_SCORE) {
+    rage.next = null;
+    rage.pending = null;
+    rage.waited = 0;
+    return;
+  }
+  if (rage.next === null) rage.next = RAGE_FIRST_DELAY;
+  if (!rage.pending) {
+    rage.next -= dt;
+    if (rage.next > 0) return;
+    const roll = Math.random();
+    rage.pending = roll < 0.50 ? 'lunge' : roll < 0.80 ? 'combo' : 'rise';
+    rage.waited = 0;
+  }
+  rage.waited += dt;
+  // Keep each event type faithful to its roll: a tracking lunge must never turn into a rise.
+  if (startRage(rage.pending)) {
+    rage.pending = null;
+    rage.next = rand(RAGE_INTERVAL[0], RAGE_INTERVAL[1]);
+  } else if (rage.waited > 3) {
+    // Retry the same event shortly instead of silently replacing it with another type.
+    rage.waited = 0;
+    rage.next = 0.25;
+  }
+}
+
+// The ball must not drop onto a hazard: wait (up to RISE_MAX_WAIT) until its column is clear.
+function dropClear() {
+  for (const e of ents) {
+    if (e.kind !== 'hazard') continue;
+    if (Math.abs(e.x - ball.x) < HAZ / 2 + BALL_R + 10 &&
+        e.y + HAZ > ball.y - BALL_R - 70 && e.y < BALL_Y0 + BALL_R) return false;
+  }
+  return true;
+}
+function updateRise(dt) {
+  const r = ball.rise;
+  if (!r) { ball.y = BALL_Y0; return; }
+  r.t += dt;
+  if (r.phase === 'up') {
+    ball.y = BALL_Y0 - RISE_PX * Math.min(1, r.t / RISE_UP);
+    if (r.t >= RISE_UP) { r.phase = 'hold'; r.t = 0; }
+  } else if (r.phase === 'hold') {
+    ball.y = BALL_Y0 - RISE_PX;
+    if (r.t >= RISE_HOLD) { r.phase = 'wait'; r.t = 0; }
+  } else if (r.phase === 'wait') {
+    ball.y = BALL_Y0 - RISE_PX;
+    if (dropClear() || r.t >= RISE_MAX_WAIT) { r.phase = 'down'; r.t = 0; }
+  } else {
+    ball.y = BALL_Y0 - RISE_PX * (1 - Math.min(1, r.t / RISE_DOWN));
+    if (r.t >= RISE_DOWN) {
+  ball.rise = null;
+  ball.y = BALL_Y0;
+
+  if (state === 'playing') {
+    score += RAGE_DODGE_REWARD;
+    popups.push({
+      x: ball.x,
+      y: ball.y - 20,
+      text: '+500 DODGE!',
+      t: 0
+    });
+
+    const ri = rankIndex(score);
+    if (ri > rankIdx) {
+      rankIdx = ri;
+      banner = { idx: ri, t: 2.2 };
+    }
+  }
+}
+  }
+}
+
+/* ---------- cutscene (plays after a rage-event hit, then Game Over) ---------- */
+function startCutscene() {
+  state = 'cutscene';
+  cut.t = 0; cut.started = false;
+  vid.style.display = 'block';
+  try { vid.currentTime = 0; } catch (e) {}
+  vid.muted = false;
+  const fail = () => endCutscene();
+  const attempt = () => {
+    let p;
+    try { p = vid.play(); } catch (e) { fail(); return; }
+    if (p && p.catch) p.catch(() => {
+      vid.muted = true;                                       // sound was blocked: try silently
+      let q; try { q = vid.play(); } catch (e) { fail(); return; }
+      if (q && q.catch) q.catch(fail);
+    });
+  };
+  attempt();
+}
+function endCutscene() {
+  if (state !== 'cutscene') return;
+  try { vid.pause(); } catch (e) {}
+  vid.style.display = 'none';
+  state = 'gameover';
+}
+function updateCutscene(dt) {
+  cut.t += dt;
+  const cap = (isFinite(vid.duration) && vid.duration > 0 ? vid.duration : 30) + 5;
+  if ((!cut.started && cut.t > CUTSCENE_START_TIMEOUT) || cut.t > cap) endCutscene();
+}
+vid.src = CUTSCENE_SRC;
+vid.preload = 'auto';
+vid.addEventListener('playing', () => { cut.started = true; });
+vid.addEventListener('ended', endCutscene);
+vid.addEventListener('error', () => { if (state === 'cutscene') endCutscene(); });
+
+function endGame(hazard) {
+  const rageHit = !!(hazard.lunger || ball.rise);            // a rage event caused this hit
+  const prevBest = best;
+  const newHigh = score > prevBest;
+  if (newHigh) { best = score; store.set(KEY_BEST, String(best)); }
+  if (score > 0) {
+    top5.push(score);
+    top5.sort((a, b) => b - a);
+    top5 = top5.slice(0, 5);
+    store.set(KEY_TOP5, JSON.stringify(top5));
+  }
+  over = { score, prevBest, newHigh, rank: rankIndex(score), phrase: hazard.def.phrase };
+  if (rageHit) startCutscene(); else state = 'gameover';
+}
+function toTitle() { state = 'title'; }
+function showHowTo() { state = 'howto'; }
+
+/* ---------- per-frame update ---------- */
+function update(dt) {
+  const dir = (keys.right ? 1 : 0) - (keys.left ? 1 : 0);
+  ball.x = clamp(ball.x + dir * PLAYER_SPEED * dt, FIELD.x + BALL_R, FIELD.x + FIELD.w - BALL_R);
+  if (ball.flash > 0) ball.flash -= dt;
+  updateRage(dt);
+  updateRise(dt);
+
+  spawnTimer -= dt;
+  if (spawnTimer <= 0) { spawnWave(); spawnTimer += spawnInterval(score); }
+
+  const v = fallSpeed(score);
+  for (const e of ents) {
+    if (e.kind === 'hazard') stepHazard(e, e.lunger, dt, v, ball.x, ball.y);
+    else e.y += v * dt;
+  }
+
+  // hazards first: any hit ends the run immediately
+  for (const e of ents) {
+    if (e.kind !== 'hazard') continue;
+    if (circleRect(ball.x, ball.y, BALL_R - 1, e.x - HAZ / 2 + 3, e.y + 3, HAZ - 6, HAZ - 6)) { endGame(e); return; }
+  }
+  for (const e of ents) {
+  if (
+    e.kind === 'hazard' &&
+    e.lunger &&
+    e.lunger.go &&
+    e.y > ball.y + BALL_R &&
+    !rewardedLunges.has(e)
+  ) {
+    rewardedLunges.add(e);
+    score += RAGE_DODGE_REWARD;
+
+    popups.push({
+      x: ball.x,
+      y: ball.y - 20,
+      text: '+500 DODGE!',
+      t: 0
+    });
+
+    const ri = rankIndex(score);
+    if (ri > rankIdx) {
+      rankIdx = ri;
+      banner = { idx: ri, t: 2.2 };
+    }
+  }
+}
+  // collectibles
+  for (let i = ents.length - 1; i >= 0; i--) {
+    const e = ents[i];
+    if (e.kind !== 'skill') continue;
+    if (circleRect(ball.x, ball.y, BALL_R, e.x - SKILL_W / 2, e.y, SKILL_W, SKILL_H)) {
+      const pts = TIERS[e.tier].points;
+      score += pts;
+      popups.push({ x: e.x, y: e.y, text: '+' + pts, t: 0 });
+      ball.flash = 0.12;
+      ents.splice(i, 1);
+      const ri = rankIndex(score);
+      if (ri > rankIdx) { rankIdx = ri; banner = { idx: ri, t: 2.2 }; }
+    }
+  }
+  ents = ents.filter(e => e.y < FIELD.y + FIELD.h + 4);
+
+  for (const p of popups) p.t += dt;
+  popups = popups.filter(p => p.t < 0.6);
+  if (banner) { banner.t -= dt; if (banner.t <= 0) banner = null; }
+}
+
+/* =====================================================================
+   ANIMATED BACKDROP (title + menu screens only)
+   ===================================================================== */
+const tri   = (p, m) => { const q = ((p % (2 * m)) + 2 * m) % (2 * m); return q < m ? q : 2 * m - q; };
+const wrapN = (v, n) => ((v % n) + n) % n;
+
+// Where the moving elements travel on each screen (chosen to peek out between the boxes).
+const FX_LAYOUT = {
+  title: { clouds: [6, 62, 118], flyers: [76, 84], hopper: 92, jelly: { x: 30, sway: 10, top: 96, bottom: 152 } },
+  howto: { clouds: [270, 300, 328], flyers: [296, 312], hopper: 354, jelly: { x: 160, sway: 120, top: 318, bottom: 332 } }
+};
+const EMBER_COLORS = ['#ff9a70', '#ffd84a', '#e86040'];
+const EMBERS = [];
+for (let i = 0; i < 22; i++) {
+  EMBERS.push({
+    x: rand(0, W), y: rand(0, H), sp: rand(10, 26), f: rand(0.8, 2), ph: rand(0, 6.28),
+    c: EMBER_COLORS[i % EMBER_COLORS.length], s: Math.random() < 0.4 ? 3 : 2
+  });
+}
+const BG_BALLS = [
+  { x: 40,  y: 60,  vx: 28,  vy: 19 },
+  { x: 200, y: 200, vx: -22, vy: 26 },
+  { x: 120, y: 300, vx: 18,  vy: -23 }
+];
+
+function drawBackdropFX(kind) {
+  const L = FX_LAYOUT[kind];
+  L.clouds.forEach((cy, i) => {
+    ctx.drawImage(CLOUD, Math.round(wrapN(i * 110 + (8 + i * 4) * T, W + 60) - 40), cy);
+  });
+  for (const e of EMBERS) {
+    const y = wrapN(e.y - e.sp * T, H + 10) - 5;
+    const x = e.x + Math.sin(T * e.f + e.ph) * 6;
+    ctx.fillStyle = e.c;
+    ctx.fillRect(Math.round(x), Math.round(y), e.s, e.s);
+  }
+  for (const b of BG_BALLS) {
+    ctx.drawImage(miniBall, Math.round(tri(b.x + b.vx * T, W - 16)), Math.round(tri(b.y + b.vy * T, H - 16)));
+  }
+  L.flyers.forEach((fy, i) => {
+    const dir = i % 2 ? -1 : 1;
+    const x = wrapN(i * 150 + dir * (26 + i * 8) * T, W + 60) - 30;
+    ctx.drawImage(CRITTERS.flyer[Math.floor(T * 6 + i) % 2], Math.round(x), Math.round(fy + Math.sin(T * 2 + i) * 5));
+  });
+  const hop = Math.abs(Math.sin(T * 3.2));
+  ctx.drawImage(CRITTERS.hopper[hop > 0.25 ? 1 : 0],
+    Math.round(wrapN(30 * T, W + 60) - 30), Math.round(L.hopper - 20 - hop * 12));
+  const J = L.jelly;
+  ctx.drawImage(CRITTERS.jelly[Math.floor(T * 3) % 2],
+    Math.round(J.x + Math.sin(T * 0.7) * J.sway - 12), Math.round(J.top + tri(T * 14, J.bottom - J.top)));
+}
+
+/* =====================================================================
+   RENDERING
+   ===================================================================== */
+function btn(id, label, x, y, w, h) {
+  buttons.push({ id, x, y, w, h });
+  const hover = mouse.x >= x && mouse.x < x + w && mouse.y >= y && mouse.y < y + h;
+  box(x, y, w, h, hover ? C.hover : C.light);
+  txt(label, x + w / 2 + (hover ? 4 : 0), y + (h - 8) / 2 + 1, { align: 'center' });
+  if (hover) {
+    const cx = x + 8, cy = y + h / 2 - 3;
+    ctx.fillStyle = C.dark;
+    ctx.fillRect(cx, cy, 1, 7); ctx.fillRect(cx + 1, cy + 1, 1, 5);
+    ctx.fillRect(cx + 2, cy + 2, 1, 3); ctx.fillRect(cx + 3, cy + 3, 1, 1);
+  }
+}
+
+function drawEmblem(idx, x, y, pulse) {
+  ctx.fillStyle = C.dark; ctx.fillRect(x, y, 32, 32);
+  const fc = (pulse && Math.floor(T * 4) % 2) ? C.red : FRAME_COLORS[idx];
+  ctx.fillStyle = fc; ctx.fillRect(x + 2, y + 2, 28, 28);
+  ctx.fillStyle = C.light; ctx.fillRect(x + 4, y + 4, 24, 24);
+  ctx.drawImage(glyphImgs[idx], x + 4, y + 4);
+}
+
+function drawSkill(e) {
+  const x = Math.round(e.x - SKILL_W / 2), y = Math.round(e.y);
+  let border = C.dark;
+  if (e.tier === 'legendary' && Math.floor(T * 6) % 2) border = C.red;
+  ctx.fillStyle = border; ctx.fillRect(x, y, SKILL_W, SKILL_H);
+  ctx.fillStyle = TIERS[e.tier].color; ctx.fillRect(x + 2, y + 2, SKILL_W - 4, SKILL_H - 4);
+  txt(e.label, x + SKILL_W / 2, y + 6, { align: 'center' });
+}
+
+function drawPlayfield() {
+  ctx.fillStyle = C.dark;
+  ctx.fillRect(FIELD.x - 2, FIELD.y - 2, FIELD.w + 4, FIELD.h + 4);
+  ctx.save();
+  ctx.beginPath(); ctx.rect(FIELD.x, FIELD.y, FIELD.w, FIELD.h); ctx.clip();
+  ctx.drawImage(fieldCache, 0, 0);
+  for (const e of ents) {
+    if (e.kind === 'skill') drawSkill(e);
+    else {
+      const shake = e.lunger && !e.lunger.go ? (Math.floor(T * 40) % 2 ? 2 : -2) : 0;   // the lunge tell
+      ctx.drawImage(e.def.img, Math.round(e.x - HAZ / 2) + shake, Math.round(e.y));
+    }
+  }
+  
+  playerBall = playerBalls[rankIndex(score)];
+
+  ctx.drawImage(
+    playerBall,
+    Math.round(ball.x - BALL_R),
+    Math.round(ball.y - BALL_R)
+  );
+
+
+  if (ball.flash > 0) {
+    ctx.fillStyle = C.light;
+    ctx.fillRect(Math.round(ball.x) - 12, Math.round(ball.y) - 12, 2, 2);
+    ctx.fillRect(Math.round(ball.x) + 10, Math.round(ball.y) - 12, 2, 2);
+    ctx.fillRect(Math.round(ball.x) - 12, Math.round(ball.y) + 10, 2, 2);
+    ctx.fillRect(Math.round(ball.x) + 10, Math.round(ball.y) + 10, 2, 2);
+  }
+  for (const p of popups) txt(p.text, Math.round(p.x), Math.round(p.y - p.t * 30), { align: 'center', color: C.light, shadow: 1 });
+  if (banner) {
+    const bx = 40, by = FIELD.y + 6, bw = 240, bh = 44;
+    box(bx, by, bw, bh, Math.floor(T * 5) % 2 ? C.light : '#f0e090');
+    drawEmblem(banner.idx, bx + 8, by + 6, true);
+    txt('RANK UP!', bx + 48, by + 9, { color: C.red });
+    txt(RANKS[banner.idx].name.toUpperCase(), bx + 48, by + 24, {});
+  }
+  ctx.restore();
+}
+
+function drawHUD() {
+  box(4, 4, 312, 20);
+  txt('POKÉMON: GOTTA CATCH ‘IT’ ALL!', 160, 10, { align: 'center' });
+
+  box(4, 30, 312, 48);
+  txt('SCORE ' + pad6(score), 12, 35, {});
+  txt('BEST ' + pad6(Math.max(best, score)), 308, 35, { align: 'right' });
+  txt('RANK: ' + RANKS[rankIndex(score)].name.toUpperCase(), 12, 51, {});
+
+  box(4, 400, 312, 40);
+  txt('A/D OR ARROWS: MOVE', 160, 417, { align: 'center' });
+  txt('SPACE: START / RESTART', 160, 427, { align: 'center' });
+}
+
+
+function renderPlaying() {
+  ctx.drawImage(bgCache, 0, 0);
+  drawPlayfield();
+  drawHUD();
+}
+
+function renderTitle() {
+  ctx.drawImage(bgCache, 0, 0);
+  drawBackdropFX('title');
+  txt('POKÉMON:', 160, 14, { size: 16, align: 'center', color: C.light, shadow: 2 });
+  txt('GOTTA CATCH', 160, 34, { size: 16, align: 'center', color: C.light, shadow: 2 });
+  txt('‘IT’ ALL!', 160, 54, { size: 16, align: 'center', color: C.gold, shadow: 2 });
+  const bob = (Math.floor(T * 2) % 2) * 2;
+  ctx.drawImage(titleBall, 78, 92 + bob);
+  ctx.drawImage(COMPUTER, 190, 98 - bob);
+
+  btn('start', 'START GAME', 80, 164, 160, 22);
+  btn('how', 'HOW TO PLAY', 80, 192, 160, 22);
+  if (Math.floor(T * 2) % 2) txt('PRESS SPACE', 160, 222, { align: 'center', color: C.light, shadow: 1 });
+
+  box(8, 236, 304, 36);
+  txt('BEST ' + pad6(best), 20, 243, {});
+  txt('RANK ' + (best > 0 ? RANKS[rankIndex(best)].name.toUpperCase() : '---'), 20, 257, {});
+
+  box(8, 278, 304, 76);
+  txt('TOP 5', 160, 283, { align: 'center' });
+  for (let i = 0; i < 5; i++) {
+    const y = 295 + i * 11;
+    if (top5[i] !== undefined) txt((i + 1) + '. ' + pad6(top5[i]) + ' ' + RANKS[rankIndex(top5[i])].name.toUpperCase(), 24, y, {});
+    else txt((i + 1) + '. ------', 24, y, {});
+  }
+}
+
+function renderHowTo() {
+  ctx.drawImage(bgCache, 0, 0);
+  drawBackdropFX('howto');
+  box(8, 16, 304, 244);
+  txt('HOW TO PLAY', 160, 28, { align: 'center' });
+  const L = [
+    [50, 'CATCH IT SKILLS TO SCORE.'],
+    [62, 'DODGE EVERY BUG, VIRUS AND'],
+    [74, 'OTHER HAZARD. ONE HIT ENDS'],
+    [86, 'THE GAME!'],
+    [110, 'LEFT / A    MOVE LEFT'],
+    [122, 'RIGHT / D   MOVE RIGHT'],
+    [134, 'SPACE       START / RESTART'],
+    [158, 'POINTS:'],
+    [170, 'COMMON      +10'],
+    [182, 'ADVANCED    +25'],
+    [194, 'RARE        +50'],
+    [206, 'LEGENDARY   +100'],
+    [230, 'SCORE HIGH TO EARN NEW'],
+    [242, 'TRAINER RANKS!']
+  ];
+  for (const l of L) txt(l[1], 20, l[0], {});
+  btn('back', 'BACK', 100, 266, 120, 22);
+}
+
+function renderGameOver() {
+  renderPlaying();
+  ctx.fillStyle = 'rgba(42,8,8,0.55)';
+  ctx.fillRect(0, 0, W, H);
+  box(16, 56, 288, 262);
+  let y = 66;
+  txt('GAME OVER!', 160, y, { size: 16, align: 'center', color: C.red });
+  y += 26;
+  for (const line of wrap('You were hit by ' + over.phrase + '!', 266)) { txt(line, 160, y, { align: 'center' }); y += 11; }
+  txt('Your IT journey continues!', 160, y, { align: 'center' });
+  y += 20;
+  txt('SCORE ' + pad6(over.score), 160, y, { align: 'center' }); y += 12;
+  txt('BEST  ' + pad6(best), 160, y, { align: 'center' }); y += 12;
+  if (over.newHigh) {
+    if (Math.floor(T * 3) % 2) txt('NEW HIGH SCORE!', 160, y, { align: 'center', color: C.red });
+    y += 12;
+  }
+  y += 6;
+  drawEmblem(over.rank, 28, y, true);
+  const nameLines = wrap(RANKS[over.rank].name.toUpperCase(), 224);
+  let ny = y + 16 - nameLines.length * 6;
+  for (const line of nameLines) { txt(line, 68, ny, { color: C.red }); ny += 12; }
+  y += 40;
+  for (const line of wrap('Congratulations! You have reached the rank of ' + RANKS[over.rank].name + '!', 270)) {
+    txt(line, 160, y, { align: 'center' }); y += 11;
+  }
+  btn('again', 'TRY AGAIN', 80, 262, 160, 22);
+  btn('title', 'RETURN TO TITLE', 80, 288, 160, 22);
+}
+
+function render() {
+  ctx.setTransform(scale, 0, 0, scale, 0, 0);
+  ctx.imageSmoothingEnabled = false;
+  buttons = [];
+  if (state === 'title') renderTitle();
+  else if (state === 'howto') renderHowTo();
+  else if (state === 'gameover') renderGameOver();
+  else renderPlaying();
+  canvas.style.cursor = buttons.some(b => mouse.x >= b.x && mouse.x < b.x + b.w && mouse.y >= b.y && mouse.y < b.y + b.h) ? 'pointer' : 'default';
+}
+
+/* =====================================================================
+   INPUT
+   ===================================================================== */
+const GAME_KEYS = ['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', 'Space'];
+
+window.addEventListener('keydown', e => {
+  if (GAME_KEYS.indexOf(e.code) !== -1) e.preventDefault();   // stop page scrolling
+  if (e.code === 'ArrowLeft' || e.code === 'KeyA') keys.left = true;
+  else if (e.code === 'ArrowRight' || e.code === 'KeyD') keys.right = true;
+  else if (e.code === 'Space' && !e.repeat) {
+    if (state === 'title' || state === 'gameover') startGame();
+  }
+});
+window.addEventListener('keyup', e => {
+  if (GAME_KEYS.indexOf(e.code) !== -1) e.preventDefault();
+  if (e.code === 'ArrowLeft' || e.code === 'KeyA') keys.left = false;
+  else if (e.code === 'ArrowRight' || e.code === 'KeyD') keys.right = false;
+});
+window.addEventListener('blur', () => { keys.left = false; keys.right = false; });
+
+function toLogical(e) {
+  const r = canvas.getBoundingClientRect();
+  return {
+    x: (e.clientX - r.left - canvas.clientLeft) / canvas.clientWidth * W,
+    y: (e.clientY - r.top - canvas.clientTop) / canvas.clientHeight * H
+  };
+}
+canvas.addEventListener('pointermove', e => { mouse = toLogical(e); });
+canvas.addEventListener('pointerleave', () => { mouse = { x: -1, y: -1 }; });
+canvas.addEventListener('click', e => {
+  const p = toLogical(e);
+  mouse = p;
+  for (const b of buttons) {
+    if (p.x >= b.x && p.x < b.x + b.w && p.y >= b.y && p.y < b.y + b.h) {
+      if (b.id === 'start' || b.id === 'again') startGame();
+      else if (b.id === 'how') showHowTo();
+      else if (b.id === 'back' || b.id === 'title') toTitle();
+      break;
+    }
+  }
+});
+
+/* =====================================================================
+   SCALING + MAIN LOOP
+   ===================================================================== */
+function resize() {
+  const margin = 12 + 16;                                   // border + breathing room
+  let s = Math.min((window.innerWidth - margin) / W, (window.innerHeight - margin) / H);
+  if (s >= 1) s = Math.floor(s);                            // integer scale keeps pixels crisp
+  s = Math.max(s, 0.5);
+  const dpr = window.devicePixelRatio || 1;
+  scale = Math.max(1, Math.round(s * dpr));
+  canvas.style.width = (W * s) + 'px';
+  canvas.style.height = (H * s) + 'px';
+  canvas.width = W * scale;
+  canvas.height = H * scale;
+}
+window.addEventListener('resize', resize);
+resize();
+
+if (document.fonts && document.fonts.load) {
+  try { document.fonts.load('8px "Press Start 2P"'); document.fonts.load('16px "Press Start 2P"'); } catch (e) {}
+}
+
+let last = performance.now();
+function frame(now) {
+  const dt = Math.min(0.05, Math.max(0, (now - last) / 1000));
+  last = now;
+  T += dt;
+  if (state === 'playing') update(dt);
+  else if (state === 'cutscene') updateCutscene(dt);
+  render();
+  requestAnimationFrame(frame);
+}
+requestAnimationFrame(frame);
+
+})();
+</script>
+</body>
+</html>
