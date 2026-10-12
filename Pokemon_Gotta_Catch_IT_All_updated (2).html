@@ -138,6 +138,29 @@ const RISE_MAX_WAIT = 1.5;            // max extra seconds it waits for hazards 
 const CUTSCENE_SRC = 'UNEVERSEEITCOMING.mp4';   // your video: keep it next to index.html
 const CUTSCENE_START_TIMEOUT = 3;     // seconds to wait for playback to start; otherwise go straight to Game Over
 
+/*==============================================
+SOUND EFFECTS HEE HEE
+*/
+
+const SFX = {
+  points: new Audio('./points.mp3'),
+  levelUp: new Audio('./lvlup.mp3'),
+  death: new Audio('./death.mp3')
+};
+
+for (const audio of Object.values(SFX)) {
+  audio.preload = 'auto';
+  audio.volume = 0.7;
+}
+
+function playSfx(name) {
+  const audio = SFX[name];
+  if (!audio) return;
+
+  audio.currentTime = 0;
+  audio.play().catch(() => {});
+}
+
 /* =====================================================================a
    COLORS + SPRITES
    ===================================================================== */
@@ -826,6 +849,7 @@ function updateRise(dt) {
     if (ri > rankIdx) {
       rankIdx = ri;
       banner = { idx: ri, t: 2.2 };
+      playSfx('levelUp');
     }
   }
 }
@@ -880,7 +904,12 @@ function endGame(hazard) {
     store.set(KEY_TOP5, JSON.stringify(top5));
   }
   over = { score, prevBest, newHigh, rank: rankIndex(score), phrase: hazard.def.phrase };
-  if (rageHit) startCutscene(); else state = 'gameover';
+  if (rageHit) {
+  startCutscene();
+  } else {
+    playSfx('death');
+    state = 'gameover';
+  }
 }
 function toTitle() { state = 'title'; }
 function showHowTo() { state = 'howto'; }
@@ -932,20 +961,40 @@ function update(dt) {
     }
   }
 }
+
   // collectibles
   for (let i = ents.length - 1; i >= 0; i--) {
     const e = ents[i];
     if (e.kind !== 'skill') continue;
+
     if (circleRect(ball.x, ball.y, BALL_R, e.x - SKILL_W / 2, e.y, SKILL_W, SKILL_H)) {
       const pts = TIERS[e.tier].points;
       score += pts;
+
+      playSfx('points');
+
       popups.push({ x: e.x, y: e.y, text: '+' + pts, t: 0 });
       ball.flash = 0.12;
       ents.splice(i, 1);
+
       const ri = rankIndex(score);
-      if (ri > rankIdx) { rankIdx = ri; banner = { idx: ri, t: 2.2 }; }
+      if (ri > rankIdx) {
+        rankIdx = ri;
+        banner = { idx: ri, t: 2.2 };
+        playSfx('levelUp');
+      }
     }
   }
+
+  ents = ents.filter(e => e.y < FIELD.y + FIELD.h + 4);
+
+  for (const p of popups) p.t += dt;
+  popups = popups.filter(p => p.t < 0.6);
+  if (banner) {
+    banner.t -= dt;
+    if (banner.t <= 0) banner = null;
+  }
+
   ents = ents.filter(e => e.y < FIELD.y + FIELD.h + 4);
 
   for (const p of popups) p.t += dt;
